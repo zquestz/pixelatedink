@@ -1,0 +1,19 @@
+body {
+  margin:0 auto;
+  padding: 4em 2em;
+  text-align:center;
+  background-color:#090909;
+  color:#DAEAEF
+}
+
+img {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+.logo {
+  margin-bottom: 1em;
+}

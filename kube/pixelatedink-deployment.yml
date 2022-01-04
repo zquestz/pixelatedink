@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  labels:
+    service: pixelatedink
+  name: pixelatedink
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      service: pixelatedink
+  template:
+    metadata:
+      labels:
+        service: pixelatedink
+    spec:
+      containers:
+      - image: zquestz/pixelatedink:latest
+        imagePullPolicy: Always
+        name: pixelatedink
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "8Mi"
+      restartPolicy: Always

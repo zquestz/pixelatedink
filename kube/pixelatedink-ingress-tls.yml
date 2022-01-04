@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pixelatedink-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - www.pixelatedink.io
+    - pixelatedink.io
+    secretName: pixelatedink-tls
+  defaultBackend:
+    service:
+      name: pixelatedink
+      port:
+        number: 801
+  rules:
+  - host: pixelatedink.io
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: pixelatedink
+            port:
+              number: 801
+  - host: www.pixelatedink.io
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: pixelatedink
+            port:
+              number: 801

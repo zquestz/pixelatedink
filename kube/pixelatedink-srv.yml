@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pixelatedink
+  namespace: default
+spec:
+  ports:
+    - port: 801
+      targetPort: 80
+  selector:
+    service: pixelatedink
+  type: NodePort
