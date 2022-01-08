@@ -1,6 +1,6 @@
 # pixelatedink.io
 
-This is the repository for [pixelatedink.io](https://pixelatedink).
+This is the repository for [pixelatedink.io](https://pixelatedink.io).
 
 ## License
 
